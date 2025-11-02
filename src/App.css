@@ -1,0 +1,316 @@
+/* ============================================= */
+/* 1. VARIABLES & GLOBAL STYLES
+/* ============================================= */
+
+:root {
+  /* Colors */
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --success-color: #28a745;
+  --success-hover: #218838;
+  --danger-color: #e74c3c;
+  --danger-hover: #c0392b;
+  --admin-color: #6f42c1;
+  --light-bg: #f4f7f9;
+  --white-bg: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #eeeeee;
+  --light-blue-bg: #f0f7ff;
+
+  /* Sizing & Effects */
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  margin: 0;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================= */
+/* 2. LAYOUT & HEADER
+/* ============================================= */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--white-bg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.app-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-hover);
+  cursor: pointer;
+}
+
+.app-header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-header nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.app-header nav a:hover {
+  color: var(--primary-color);
+}
+
+.admin-link {
+  font-weight: 500;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
+  margin-left: 10px;
+}
+
+.lang-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease, font-weight 0.2s ease;
+  border-radius: 4px;
+}
+
+.lang-toggle button:hover {
+  color: var(--primary-color);
+}
+
+.lang-toggle button.active {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ============================================= */
+/* 3. GENERAL COMPONENTS
+/* ============================================= */
+
+.portal-box,
+.welcome-container {
+  text-align: center;
+  max-width: 700px;
+}
+
+.portal-box {
+  background: var(--white-bg);
+  padding: 30px 40px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 450px;
+}
+
+.welcome-container h1 { font-size: 48px; color: #222; }
+.subtitle { font-size: 18px; color: var(--text-secondary); margin-top: -15px; margin-bottom: 40px; }
+.portal-box h2 { margin-top: 0; font-size: 24px; }
+.portal-box p { color: var(--text-secondary); font-size: 16px; margin-bottom: 30px; }
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-sm);
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* --- Buttons --- */
+.action-button, .nav-button, .back-button {
+  padding: 12px;
+  border-radius: var(--border-radius-md);
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.action-button:disabled, .nav-button:disabled, .back-button:disabled { background-color: #cccccc; color: #666; cursor: not-allowed; border-color: #ccc; }
+
+.nav-button { padding: 15px 30px; }
+.nav-button.primary { background-color: var(--primary-color); color: white; }
+.nav-button.primary:hover { background-color: var(--primary-hover); }
+.nav-button.secondary { background-color: #f0f0f0; color: var(--text-primary); border: 1px solid #ddd; }
+.nav-button.secondary:hover { background-color: #e9e9e9; }
+
+.action-button { width: 100%; color: white; margin-top: 10px; }
+.action-button.primary, .action-button.verify, .action-button.enroll-new, .institution-form .action-button { background-color: var(--primary-color); }
+.action-button.primary:hover, .action-button.verify:hover, .action-button.enroll-new:hover, .institution-form .action-button:hover { background-color: var(--primary-hover); }
+
+/* --- THIS IS THE CHANGED STYLE --- */
+.action-button.admin-login { background-color: var(--primary-color); }
+.action-button.admin-login:hover { background-color: var(--primary-hover); }
+
+
+.back-button { background: none; border: 1px solid #ccc; color: var(--text-secondary); width: auto; padding: 8px 16px; font-size: 14px; font-weight: 500; }
+.back-button:hover { background-color: #f0f0f0; }
+
+/* --- Result/Status Boxes --- */
+.result-box { text-align: center; margin-top: 20px; padding: 12px; font-size: 14px; font-weight: 500; border-radius: var(--border-radius-sm); }
+.result-invalid { color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; }
+.result-valid { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; }
+
+/* ============================================= */
+/* 4. STUDENT PORTAL RESULTS VIEW
+/* ============================================= */
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.results-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+}
+
+.results-header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--text-primary);
+}
+
+.dashboard-container .back-button {
+  margin-top: 10px;
+  font-weight: 500;
+  background-color: var(--white-bg);
+  width: auto;
+}
+
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  width: 100%;
+  justify-content: center;
+}
+
+.cert-card {
+  background: var(--white-bg);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: left;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.cert-card h3 { margin-top: 0; font-size: 18px; color: var(--text-primary); }
+.cert-card p { font-size: 14px; color: var(--text-secondary); }
+.card-links { margin-top: 20px; display: flex; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 15px; }
+.card-links a { text-decoration: none; font-weight: bold; color: var(--primary-color); transition: color 0.2s; }
+.card-links a:hover { color: var(--primary-hover); text-decoration: underline; }
+
+/* ============================================= */
+/* 5. ADMIN DASHBOARD
+/* ============================================= */
+
+.admin-dashboard { width: 100%; max-width: 1200px; padding: 20px; }
+.admin-tabs { display: flex; gap: 10px; border-bottom: 2px solid var(--border-color); margin-bottom: 20px; }
+.admin-tabs button { padding: 10px 20px; border: none; background-color: transparent; cursor: pointer; font-size: 16px; font-weight: 500; color: var(--text-secondary); border-bottom: 2px solid transparent; transform: translateY(2px); }
+.admin-tabs button.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
+
+.admin-layout { display: grid; grid-template-columns: 350px 1fr; gap: 30px; margin-top: 20px; }
+.student-list-panel, .issue-panel { background: var(--white-bg); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--box-shadow); }
+
+.student-list { max-height: 60vh; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); }
+.student-item { padding: 10px 15px; border-bottom: 1px solid var(--border-color); cursor: pointer; transition: background-color 0.2s; }
+.student-item:last-child { border-bottom: none; }
+.student-item:hover { background-color: #f8f9fa; }
+.student-item.selected { background-color: #e0e7ff; border-left: 4px solid #4f46e5; }
+.student-name { font-weight: bold; margin: 0; }
+.student-id { font-size: 12px; color: var(--text-secondary); margin: 0; }
+
+.student-details-card { background-color: #f8f9fa; border-radius: var(--border-radius-sm); padding: 15px; margin-bottom: 20px; text-align: left; }
+.student-details-card p { margin: 5px 0; font-size: 14px; }
+.enrollments h4 { margin-top: 20px; margin-bottom: 10px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+.enrollment-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); margin-bottom: 10px; }
+.enrollment-item:last-child { margin-bottom: 0; }
+.enrollment-actions { display: flex; align-items: center; gap: 10px; }
+.enrollment-item .action-button { font-size: 12px; padding: 8px 12px; margin-top: 0; width: auto; }
+.action-button.issue-enrollment { background-color: var(--success-color); }
+.action-button.issue-enrollment:hover { background-color: var(--success-hover); }
+.action-button.revoke-certificate { background-color: var(--danger-color); }
+.action-button.revoke-certificate:hover { background-color: var(--danger-hover); }
+
+.status-chip { padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; text-decoration: none; }
+.status-chip.certified { background-color: #d4edda; color: #155724; }
+.status-chip.revoked { background-color: #f8d7da; color: #721c24; }
+.tx-link { font-size: 11px; color: var(--primary-hover); text-decoration: none; font-weight: bold; }
+.tx-link:hover { text-decoration: underline; }
+
+/* --- Institution Management --- */
+.institution-list { max-height: 60vh; overflow-y: auto; }
+.institution-item { background-color: var(--light-blue-bg); border: 1px solid #d6eaff; padding: 15px; border-radius: var(--border-radius-sm); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.inst-name { font-weight: bold; margin: 0; }
+.inst-address { font-size: 12px; color: var(--text-secondary); margin: 0; font-family: monospace; }
+.institution-panel { background-color: var(--light-blue-bg); }
+
+/* --- Modal --- */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal-content { background: white; padding: 30px 40px; border-radius: var(--border-radius-lg); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); width: 100%; max-width: 500px; }
+.modal-content h3 { margin-top: 0; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.modal-actions .action-button, .modal-actions .back-button { width: auto; margin-top: 0; }
+
+/* --- Verifier Result Details --- */
+.result-box { text-align: left; }
+.result-message { text-align: center; font-weight: 500; margin-bottom: 15px; }
+.cert-details { border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px; }
+.cert-details p { margin: 8px 0; font-size: 14px; text-align: left; color: var(--text-secondary); }
+.cert-details-links { margin-top: 15px; display: flex; gap: 15px; }
+.cert-details-links a { text-decoration: none; font-weight: bold; color: var(--primary-color); font-size: 14px; padding: 8px 12px; border-radius: var(--border-radius-sm); background-color: #eaf4ff; transition: all 0.2s ease; }
+.cert-details-links a:hover { background-color: #d4e1f9; color: var(--primary-hover); }

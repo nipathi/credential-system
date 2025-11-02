@@ -1,0 +1,19 @@
+{
+  "logo": "स्किल वॉल्ट",
+  "welcome_view_certs": "प्रमाणपत्र देखें",
+  "nav_student_portal": "छात्र पोर्टल",
+  "nav_verifier": "सत्यापनकर्ता",
+  "nav_admin_login": "एडमिन लॉगिन",
+  "nav_logout": "लॉग आउट",
+  "welcome_title": "ब्लॉकचेन कौशल क्रेडेंशियलिंग सिस्टम",
+  "welcome_subtitle": "छेड़छाड़-प्रूफ डिजिटल क्रेडेंशियल जारी करने और सत्यापित करने के लिए एक एनसीवीईटी मंच।",
+  "verify_title": "प्रमाणपत्र सत्यापित करें",
+  "verify_placeholder": "प्रमाणपत्र आईडी दर्ज करें",
+  "verify_button": "सत्यापित करें",
+  "verify_back_home": "होम पर वापस जाएं",
+  "verify_certificate_id_not_found": "प्रमाणपत्र आईडी नहीं मिली।",
+  "verify_error_could_not_connect_to_the_server": "त्रुटि: सर्वर से कनेक्ट नहीं हो सका।",
+  "verify_certificate_is_valid_and_verified_on_the_blockchain": "प्रमाणपत्र वैध है और ब्लॉकचेन पर सत्यापित है।",
+  "verify_this_certificate_has_been_revoked_by_the_issuer": "यह प्रमाणपत्र जारीकर्ता द्वारा रद्द कर दिया गया है।",
+  "verify_certificate_not_valid_on_blockchain": "प्रमाणपत्र ब्लॉकचेन पर मान्य नहीं है।"
+}

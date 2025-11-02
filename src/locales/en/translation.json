@@ -1,0 +1,19 @@
+{
+  "logo": "Skill Vault",
+  "welcome_view_certs": "View Certificates",
+  "nav_student_portal": "Student Portal",
+  "nav_verifier": "Verifier",
+  "nav_admin_login": "Admin Login",
+  "nav_logout": "Logout",
+  "welcome_title": "Blockchain Skill Credentialing System",
+  "welcome_subtitle": "An NCVET platform for issuing and verifying tamper-proof digital credentials.",
+  "verify_title": "Verify a Certificate",
+  "verify_placeholder": "Enter Certificate ID",
+  "verify_button": "Verify",
+  "verify_back_home": "Back to Home",
+  "verify_certificate_id_not_found": "Certificate ID not found.",
+  "verify_error_could_not_connect_to_the_server": "Error: Could not connect to the server.",
+  "verify_certificate_is_valid_and_verified_on_the_blockchain": "Certificate is valid and verified on the blockchain.",
+  "verify_this_certificate_has_been_revoked_by_the_issuer": "This certificate has been revoked by the issuer.",
+  "verify_certificate_not_valid_on_blockchain": "Certificate NOT valid on blockchain."
+}
